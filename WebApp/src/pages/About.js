@@ -34,9 +34,8 @@ export default function About() {
       <section className="mb-4">
         <h2>📄 Descrição Geral</h2>
         <p>
-          Este repositório contém o Microsserviço de Investimentos (Investments) como parte integrante da aplicação de Gerenciamento de Investimentos.
-          Um Gateway para gerenciamento de rotas foi aplicado assim como um Eureka server finder
-          O objetivo é gerenciar carteiras e ativos de investimento para os usuários finais.
+          Este repositório contém o Microsserviço de Investimentos (Investments), integrante de uma solução de Gestão de Carteiras e Ativos. A topologia inclui API de Investimentos, Gateway de Roteamento (edge) e Service Discovery (Eureka).
+          Objetivo: orquestrar operações de carteira e gerenciar ativos para usuários finais com contratos RESTful, persistência relacional e observabilidade básica.
         </p>
         <p>
           O projeto foi desenvolvido em Java 17 com Spring Boot, seguindo boas práticas de arquitetura de
