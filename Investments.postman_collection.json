@@ -1,0 +1,712 @@
+{
+	"info": {
+		"_postman_id": "7509b428-478c-4114-bc2b-2a15fefa4b45",
+		"name": "Investments",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45426403"
+	},
+	"item": [
+		{
+			"name": "UsersCRUD",
+			"item": [
+				{
+					"name": "/users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/users/super",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users/super",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"super"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/users/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users/{id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/users/containsName/{name}",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/containsName/{name}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"containsName",
+								"{name}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/users/getByName/{name}",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/getByName/{name}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"getByName",
+								"{name}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/users/remove",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"2a63281b-42fd-4aa1-bb64-7d17886c50d0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/remove",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"remove"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/users/update/name",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"b012e95c-7081-4dfc-ad85-8b3b101e8e69\",\r\n    \"name\": \"Luccas V P A S Carneiro\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/update/name",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"update",
+								"name"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/users/update/phone",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"b012e95c-7081-4dfc-ad85-8b3b101e8e69\",\r\n    \"phone\": \"(11) 9 1111-2222\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/update/phone",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"update",
+								"phone"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/users/update/password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"588ed3bb-9a32-45ba-bdf0-2c6ccc70509b\",\r\n    \"email\": \"luccas@example.com\",\r\n    \"oldPassword\": \"senhaSegura123\",\r\n    \"newPassword\": \"1\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/update/password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"update",
+								"password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/users",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Luccas Carneiro\",\r\n  \"userType\": \"ADMINISTRATOR\",\r\n  \"status\": \"ACTIVE\",\r\n  \"email\": \"luccas@example.com\",\r\n  \"password\": \"senha\",\r\n  \"cpf\": \"111.111.111-00\",\r\n  \"cep\": \"35931008\",\r\n  \"phone\": \"(31) 99988-9988\",\r\n  \"dateOfBirth\": \"1998-01-01T12:00:00\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/users/GetUserById",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"7e1a0e6d-3c4e-4c77-9c4d-3b4f5e9e7a1b\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/getById",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"getById"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CreditCardCRUD",
+			"item": [
+				{
+					"name": "/cc",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"b012e95c-7081-4dfc-ad85-8b3b101e8e69\",\r\n    \"creditCardNetworkId\": \"5b246656-271f-4851-97f2-215c2685281c\",\r\n    \"creditCardNumber\": \"1\",\r\n    \"owner\": \"Luccas Carneiro\",\r\n    \"cvc\": 0,\r\n    \"expiryDate\": \"2030-11-20\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/cc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/cc/remove",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"id\": \"058e58ed-2ad5-4ad7-bf47-dbacfeee5d90\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/cc/remove",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cc",
+								"remove"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CreditCardNetworkCRUD",
+			"item": [
+				{
+					"name": "/cnn",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/ccn",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"ccn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/ccn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Visa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/ccn",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"ccn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/ccn/remove",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"5b246656-271f-4851-97f2-215c2685281c\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/ccn/remove",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"ccn",
+								"remove"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Util",
+			"item": [
+				{
+					"name": "/encrypt",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"senha\": \"senhaSegura123\",\r\n    \"key\": \"21ab0c46-4385-47f0-b588-50e7d15e4cb6\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/encrypt",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"encrypt"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/decript",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"senha\": \"F5ap6eYCBA1gLP6D/GpDOA==\",\r\n    \"key\": \"21ab0c46-4385-47f0-b588-50e7d15e4cb6\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/decript",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"decript"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ViaCEP",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://viacep.com.br/ws/35931008/json/",
+							"protocol": "https",
+							"host": [
+								"viacep",
+								"com",
+								"br"
+							],
+							"path": [
+								"ws",
+								"35931008",
+								"json",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AddressCRUD",
+			"item": [
+				{
+					"name": "/address",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/address",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/address",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"user\": \"0b1fd55c-0a9d-4d05-b294-a0f12c0f1bbd\",\r\n  \"zipCode\": \"35931008\",\r\n  \"street\": \"Rua Trinta e Seis\",\r\n  \"complement\": \"\",\r\n  \"neighborhood\": \"Loanda\",\r\n  \"city\": \"João Monlevade\",\r\n  \"state\": \"Minas Gerais\",\r\n  \"region\": \"Sudeste\",\r\n  \"uf\": \"MG\",\r\n  \"ddd\": \"31\"\r\n}\r\n\r\n// {\r\n//   \"user\": \"6a59982e-db8b-458b-8323-87f6acf2fd82\",\r\n//   \"zipCode\": \"01001-000\",\r\n//   \"street\": \"Praça da Sé\",\r\n//   \"complement\": \"odd side\",\r\n//   \"neighborhood\": \"Sé\",\r\n//   \"city\": \"São Paulo\",\r\n//   \"state\": \"São Paulo\",\r\n//   \"region\": \"Southeast\",\r\n//   \"uf\": \"SP\",\r\n//   \"ddd\": \"11\"\r\n// }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/address",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/address/remove",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"19db67e4-6f24-4511-8c54-9f7d6e34a71a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/address/remove",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"address",
+								"remove"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "InvestmentsCRUD",
+			"item": [
+				{
+					"name": "/investments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9999/investments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"investments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/investments",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"user\": \"2e1bba38-10f1-4e86-94fe-4cd05a9c1566\",\r\n  \"type\": \"ACAO\",\r\n  \"status\": \"PAGO\",\r\n  \"symbol\": \"BERK34\",\r\n  \"quantity\": 10.0,\r\n  \"purchasePrice\": 126.50\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9999/investments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"investments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/investments/remove",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"id\": \"0c24f260-5e2e-4d55-91ed-7252e77d0910\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3939/investments/remove",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3939",
+							"path": [
+								"investments",
+								"remove"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

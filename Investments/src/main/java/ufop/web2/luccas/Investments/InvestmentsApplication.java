@@ -7,7 +7,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class InvestmentsApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(InvestmentsApplication.class, args);
+
+		System.out.println("Investments Application is Running...");
+
 	}
 
 }
