@@ -2,8 +2,7 @@ package ufop.web2.luccas.Investments.dtos.user;
 
 import ufop.web2.luccas.Investments.dtos.address.AddressRecordDTO;
 import ufop.web2.luccas.Investments.dtos.creditcard.CreditCardRecordDTO;
-import ufop.web2.luccas.Investments.dtos.investment.InvestmentRecordDTO;
-import ufop.web2.luccas.Investments.dtos.investment.UserInvestmentRecordDTO;
+import ufop.web2.luccas.Investments.dtos.wallet.UserWalletRecordDTO;
 import ufop.web2.luccas.Investments.enums.EnumUserStatus;
 import ufop.web2.luccas.Investments.enums.EnumUserType;
 import lombok.Builder;
@@ -24,7 +23,7 @@ public record UserRecordDTO(
         LocalDateTime dateOfBirth,
         List<CreditCardRecordDTO> creditCards,
         List<AddressRecordDTO> addresses,
-        List<UserInvestmentRecordDTO> investments
+        List<UserWalletRecordDTO> wallets
 ) {
 
 }

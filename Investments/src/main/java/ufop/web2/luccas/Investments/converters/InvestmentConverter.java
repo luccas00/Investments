@@ -2,14 +2,10 @@ package ufop.web2.luccas.Investments.converters;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
-import ufop.web2.luccas.Investments.domains.AddressDomain;
 import ufop.web2.luccas.Investments.domains.InvestmentDomain;
-import ufop.web2.luccas.Investments.dtos.address.AddressRecordDTO;
-import ufop.web2.luccas.Investments.dtos.address.CreateAddressDTO;
 import ufop.web2.luccas.Investments.dtos.investment.CreateInvestmentDTO;
 import ufop.web2.luccas.Investments.dtos.investment.InvestmentRecordDTO;
-import ufop.web2.luccas.Investments.dtos.investment.UserInvestmentRecordDTO;
-import ufop.web2.luccas.Investments.models.AddressModel;
+import ufop.web2.luccas.Investments.dtos.investment.WalletInvestmentRecordDTO;
 import ufop.web2.luccas.Investments.models.InvestmentModel;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
@@ -19,24 +15,30 @@ public class InvestmentConverter {
     {
         return new InvestmentRecordDTO(
                 model.getId(),
-                UserConverter.toSimpleUserRecordDTO(model.getUser()),
+                WalletConverter.toWalletIDRecordDTO(model.getWallet()),
                 model.getType(),
                 model.getStatus(),
                 model.getSymbol(),
                 model.getQuantity(),
                 model.getPurchasePrice(),
+                model.getCurrentPrice(),
+                model.getDesempenho(),
+                model.getIndice(),
                 model.getPurchaseDate()
         );
     }
 
-    public static UserInvestmentRecordDTO toUserInvestmentRecordDTO(InvestmentModel model)
+    public static WalletInvestmentRecordDTO toWalletInvestmentRecordDTO(InvestmentModel model)
     {
-        return new UserInvestmentRecordDTO(
+        return new WalletInvestmentRecordDTO(
                 model.getType(),
                 model.getStatus(),
                 model.getSymbol(),
                 model.getQuantity(),
                 model.getPurchasePrice(),
+                model.getCurrentPrice(),
+                model.getDesempenho(),
+                model.getIndice(),
                 model.getPurchaseDate()
         );
     }
@@ -45,6 +47,9 @@ public class InvestmentConverter {
         return InvestmentDomain.builder()
                 .symbol(dto.getSymbol())
                 .purchasePrice(dto.getPurchasePrice())
+                .currentPrice(dto.getCurrentPrice())
+                .desempenho(dto.getDesempenho())
+                .indice(dto.getIndice())
                 .quantity(dto.getQuantity())
                 .type(dto.getType())
                 .status(dto.getStatus())
@@ -53,12 +58,15 @@ public class InvestmentConverter {
 
     public static InvestmentModel toInvestmentModel(InvestmentDomain domain) {
         return InvestmentModel.builder()
-                .user(UserConverter.toUserModel(domain.getUser()))
+                .wallet(WalletConverter.toWalletModel(domain.getWallet()))
                 .id(domain.getId())
                 .type(domain.getType())
                 .status(domain.getStatus())
                 .symbol(domain.getSymbol())
                 .purchasePrice(domain.getPurchasePrice())
+                .currentPrice(domain.getCurrentPrice())
+                .desempenho(domain.getDesempenho())
+                .indice(domain.getIndice())
                 .quantity(domain.getQuantity())
                 .purchaseDate(domain.getPurchaseDate())
                 .build();

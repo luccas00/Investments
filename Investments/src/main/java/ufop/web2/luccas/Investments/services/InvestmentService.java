@@ -6,10 +6,7 @@ import ufop.web2.luccas.Investments.converters.AddressConverter;
 import ufop.web2.luccas.Investments.converters.CreditCardConverter;
 import ufop.web2.luccas.Investments.converters.InvestmentConverter;
 import ufop.web2.luccas.Investments.converters.UserConverter;
-import ufop.web2.luccas.Investments.domains.AddressDomain;
-import ufop.web2.luccas.Investments.domains.CreditCardDomain;
-import ufop.web2.luccas.Investments.domains.InvestmentDomain;
-import ufop.web2.luccas.Investments.domains.UserDomain;
+import ufop.web2.luccas.Investments.domains.*;
 import ufop.web2.luccas.Investments.dtos.address.AddressRecordDTO;
 import ufop.web2.luccas.Investments.dtos.address.CreateAddressDTO;
 import ufop.web2.luccas.Investments.dtos.address.DeleteAddressDTO;
@@ -22,6 +19,7 @@ import ufop.web2.luccas.Investments.dtos.user.UserRecordDTO;
 import ufop.web2.luccas.Investments.models.*;
 import ufop.web2.luccas.Investments.repositories.IInvestmentRepository;
 import ufop.web2.luccas.Investments.repositories.IUserRepository;
+import ufop.web2.luccas.Investments.repositories.IWalletRepository;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -32,7 +30,7 @@ import java.util.UUID;
 @AllArgsConstructor
 public class InvestmentService {
 
-    private final IUserRepository userRepository;
+    private final IWalletRepository walletRepository;
     private final IInvestmentRepository investmentRepository;
 
     public List<InvestmentRecordDTO> getAllInvestments() {
@@ -63,15 +61,15 @@ public class InvestmentService {
 
         InvestmentDomain domain = InvestmentConverter.toInvestmentDomain(dto);
 
-        Optional<UserModel> optionalUserModel = userRepository.findById(dto.getUser());
-        if (optionalUserModel.isEmpty()) {
-            throw new IllegalArgumentException("Usuário não encontrado.");
+        Optional<WalletModel> optionalModel = walletRepository.findById(dto.getWallet());
+        if (optionalModel.isEmpty()) {
+            throw new IllegalArgumentException("Wallet não encontrada.");
         }
 
-        UserModel userModel = optionalUserModel.get();
+        WalletModel walletModel = optionalModel.get();
 
         InvestmentModel model = InvestmentModel.builder()
-                .user(userModel)
+                .wallet(walletModel)
                 .type(dto.getType())
                 .status(dto.getStatus())
                 .symbol(dto.getSymbol())
@@ -80,7 +78,7 @@ public class InvestmentService {
                 .purchaseDate(LocalDateTime.now())
                 .build();
 
-        userModel.getInvestments().add(model);
+        walletModel.getInvestments().add(model);
 
         InvestmentModel saved = investmentRepository.save(model);
 

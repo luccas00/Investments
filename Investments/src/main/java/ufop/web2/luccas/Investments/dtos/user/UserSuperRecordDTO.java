@@ -4,6 +4,7 @@ package ufop.web2.luccas.Investments.dtos.user;
 import ufop.web2.luccas.Investments.dtos.address.AddressRecordDTO;
 import ufop.web2.luccas.Investments.dtos.creditcard.SuperCreditCardRecordDTO;
 import ufop.web2.luccas.Investments.dtos.investment.InvestmentRecordDTO;
+import ufop.web2.luccas.Investments.dtos.wallet.UserWalletRecordDTO;
 import ufop.web2.luccas.Investments.enums.EnumUserStatus;
 import ufop.web2.luccas.Investments.enums.EnumUserType;
 import lombok.*;
@@ -33,6 +34,6 @@ public class UserSuperRecordDTO {
     private LocalDateTime dateOfBirth;
     private List<SuperCreditCardRecordDTO> creditCards;
     private List<AddressRecordDTO> addresses;
-    private List<InvestmentRecordDTO> investments;
+    private List<UserWalletRecordDTO> wallets;
 
 }

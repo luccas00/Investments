@@ -25,7 +25,7 @@ public class UserDomain {
 
     private List<AddressDomain> addresses = new ArrayList<>();
 
-    private List<InvestmentDomain> investments = new ArrayList<>();
+    private List<WalletDomain> wallets = new ArrayList<>();
 
     private EnumUserType userType;
     private EnumUserStatus status;
@@ -41,21 +41,5 @@ public class UserDomain {
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
-
-    @Override
-    public String toString()
-    {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
-
-        return " - UserDomain - "
-            + "\n ID: " + this.id
-            + "\n Name: " + this.name
-            + "\n Credit Cards Count: " + this.creditCards.size()
-            + "\n Email: " + this.email
-            + "\n Password: " + this.password
-            + "\n CreatedAt: " + this.createdAt.format(formatter)
-            + "\n UpdatedAt: " + this.updatedAt.format(formatter)
-            + "\n - - - - -";
-    }
 
 }

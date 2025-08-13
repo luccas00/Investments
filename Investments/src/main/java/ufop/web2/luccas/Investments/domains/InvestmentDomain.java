@@ -16,7 +16,7 @@ public class InvestmentDomain {
 
     private UUID id;
 
-    private UserDomain user;
+    private WalletDomain wallet;
 
     private EnumInvestmentType type;
     private EnumInvestmentStatus status;
@@ -24,7 +24,13 @@ public class InvestmentDomain {
     private String symbol;
 
     private float quantity;
+
     private float purchasePrice;
+    private float currentPrice;
+
+    private float desempenho;
+
+    private float indice;
 
     private LocalDateTime purchaseDate;
 

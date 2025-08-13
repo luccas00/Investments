@@ -44,7 +44,7 @@ public class UserModel {
     private List<AddressModel> addresses = new ArrayList<>();
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<InvestmentModel> investments = new ArrayList<>();
+    private List<WalletModel> wallets = new ArrayList<>();
 
     private EnumUserType userType;
     private EnumUserStatus status;

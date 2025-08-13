@@ -36,10 +36,10 @@ public class UserConverter {
                         .toList()
                         : new ArrayList<>()
                 )
-                .investments(
-                    user.getInvestments() != null
-                            ? user.getInvestments().stream()
-                            .map(InvestmentConverter::toUserInvestmentRecordDTO)
+                .wallets(
+                    user.getWallets() != null
+                            ? user.getWallets().stream()
+                            .map(WalletConverter::toUserWalletRecordDTO)
                             .toList()
                             : new ArrayList<>()
                 )
@@ -69,9 +69,9 @@ public class UserConverter {
                         .map(AddressConverter::toAddresModel)
                         .toList()
                         : new ArrayList<>())
-                .investments(userDomain.getInvestments() != null
-                        ? userDomain.getInvestments().stream()
-                        .map(InvestmentConverter::toInvestmentModel)
+                .wallets(userDomain.getWallets() != null
+                        ? userDomain.getWallets().stream()
+                        .map(WalletConverter::toWalletModel)
                         .toList()
                         : new ArrayList<>())
                 .status(userDomain.getStatus())
@@ -145,8 +145,8 @@ public class UserConverter {
                 .addresses(user.getAddresses().stream()
                         .map(AddressConverter::toAddressRecordDTO)
                         .toList())
-                .investments(user.getInvestments().stream()
-                        .map(InvestmentConverter::toInvestmentRecordDTO)
+                .wallets(user.getWallets().stream()
+                        .map(WalletConverter::toUserWalletRecordDTO)
                         .toList())
                 .build();
     }
