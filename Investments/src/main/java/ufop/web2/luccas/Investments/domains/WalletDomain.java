@@ -20,6 +20,14 @@ public class WalletDomain {
     private UUID id;
     private UserDomain user;
     private List<InvestmentDomain> investments = new ArrayList<>();
+    private float amount;
+    private float balance;
+    private float desempenho;
+    private float totalQuantity;      // soma das quantities
+    private float totalInvested;      // soma investedAmount
+    private float totalMarketValue;   // soma marketValue
+    private float totalProfit;        // soma profit
+    private float totalProfitPercent;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 

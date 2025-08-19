@@ -19,6 +19,11 @@ public record InvestmentRecordDTO (
         float currentPrice,
         float desempenho,
         float indice,
+        float investedAmount,
+        float marketValue,
+        float profit,
+        float profitPercent,
+        float relativePerformance,
         LocalDateTime purchaseDate
 
 ) {

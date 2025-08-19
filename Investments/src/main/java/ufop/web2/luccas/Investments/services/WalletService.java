@@ -1,6 +1,7 @@
 package ufop.web2.luccas.Investments.services;
 
 
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import ufop.web2.luccas.Investments.converters.InvestmentConverter;
@@ -57,16 +58,10 @@ public class WalletService {
 
     }
 
+    @Transactional
     public WalletRecordDTO createWallet(CreateWalletDTO dto) {
-
-        WalletDomain domain = new WalletDomain();
-
-        Optional<UserModel> optionalUserModel = userRepository.findById(dto.getUser());
-        if (optionalUserModel.isEmpty()) {
-            throw new IllegalArgumentException("Usuário não encontrado.");
-        }
-
-        UserModel userModel = optionalUserModel.get();
+        UserModel userModel = userRepository.findById(dto.getUser())
+                .orElseThrow(() -> new IllegalArgumentException("Usuário não encontrado."));
 
         WalletModel wallet = WalletModel.builder()
                 .user(userModel)
@@ -74,11 +69,11 @@ public class WalletService {
 
         userModel.getWallets().add(wallet);
 
-        WalletModel saved = walletRepository.save(wallet);
+        WalletModel saved = walletRepository.save(wallet); // @PrePersist calculará agregados (zerados)
 
         return WalletConverter.toWalletRecordDTO(saved);
-
     }
+
 
 
     public void deleteWallet(DeleteWalletDTO dto) {

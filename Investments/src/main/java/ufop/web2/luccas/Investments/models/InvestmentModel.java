@@ -40,20 +40,47 @@ public class InvestmentModel {
 
     private float indice;
 
+    // --- Novos campos derivados (autocalculados) ---
+    private float investedAmount;   // quantity * purchasePrice
+    private float marketValue;      // quantity * currentPrice
+    private float profit;           // marketValue - investedAmount
+    private float profitPercent;    // (profit / investedAmount) * 100
+    private float relativePerformance; // desempenho - indice
+
     private LocalDateTime purchaseDate = LocalDateTime.now();
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
+    private static float nz(Float v){ return v == null ? 0f : v; }
+    private static float round2(float v){ return (float)Math.round(v * 100.0f)/100.0f; }
+
+    private void recalc() {
+        float q  = nz(quantity);
+        float pp = nz(purchasePrice);
+        float cp = nz(currentPrice);
+
+        investedAmount = round2(q * pp);
+        marketValue    = round2(q * cp);
+        profit         = round2(marketValue - investedAmount);
+
+        profitPercent = investedAmount > 0f ? round2((profit / investedAmount) * 100f) : 0f;
+
+        desempenho = profitPercent;
+        relativePerformance = round2(desempenho - nz(indice));
+    }
+
     @PrePersist
-    public void antesGravar() {
-        this.createdAt = LocalDateTime.now();
-        this.updatedAt = LocalDateTime.now();
+    public void prePersist() {
+        recalc();
+        createdAt = LocalDateTime.now();
+        updatedAt = LocalDateTime.now();
     }
 
     @PreUpdate
-    public void antesAtualizar(){
-        this.updatedAt = LocalDateTime.now();
+    public void preUpdate() {
+        recalc();
+        updatedAt = LocalDateTime.now();
     }
 
 

@@ -1,5 +1,6 @@
 package ufop.web2.luccas.Investments.services;
 
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import ufop.web2.luccas.Investments.converters.AddressConverter;
@@ -57,34 +58,34 @@ public class InvestmentService {
 
     }
 
+    @Transactional
     public InvestmentRecordDTO createInvestment(CreateInvestmentDTO dto) {
-
-        InvestmentDomain domain = InvestmentConverter.toInvestmentDomain(dto);
-
-        Optional<WalletModel> optionalModel = walletRepository.findById(dto.getWallet());
-        if (optionalModel.isEmpty()) {
-            throw new IllegalArgumentException("Wallet não encontrada.");
-        }
-
-        WalletModel walletModel = optionalModel.get();
+        WalletModel wallet = walletRepository.findById(dto.getWallet())
+                .orElseThrow(() -> new IllegalArgumentException("Wallet não encontrada."));
 
         InvestmentModel model = InvestmentModel.builder()
-                .wallet(walletModel)
+                .wallet(wallet)
                 .type(dto.getType())
                 .status(dto.getStatus())
                 .symbol(dto.getSymbol())
                 .quantity(dto.getQuantity())
                 .purchasePrice(dto.getPurchasePrice())
+                .currentPrice(dto.getCurrentPrice()) // IMPORTANTE
+                .indice(dto.getIndice())             // IMPORTANTE (se usar benchmark)
                 .purchaseDate(LocalDateTime.now())
                 .build();
 
-        walletModel.getInvestments().add(model);
+        wallet.getInvestments().add(model);
 
-        InvestmentModel saved = investmentRepository.save(model);
+        InvestmentModel saved = investmentRepository.save(model); // dispara @PrePersist do filho
+
+        // Recalcular e salvar a carteira para atualizar agregados
+        wallet.recalcAggregates();
+        walletRepository.save(wallet); // dispara @PreUpdate da carteira
 
         return InvestmentConverter.toInvestmentRecordDTO(saved);
-
     }
+
 
 
     public void deleteInvestment(DeleteInvestmentDTO dto) {

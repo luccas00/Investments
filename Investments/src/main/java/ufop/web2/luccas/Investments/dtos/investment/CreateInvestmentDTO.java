@@ -24,6 +24,5 @@ public class CreateInvestmentDTO {
     private float purchasePrice;
     private float currentPrice;
     private float indice;
-    private float desempenho;
 
 }

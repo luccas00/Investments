@@ -24,6 +24,11 @@ public class InvestmentConverter {
                 model.getCurrentPrice(),
                 model.getDesempenho(),
                 model.getIndice(),
+                model.getMarketValue(),
+                model.getProfit(),
+                model.getProfitPercent(),
+                model.getRelativePerformance(),
+                model.getInvestedAmount(),
                 model.getPurchaseDate()
         );
     }
@@ -39,6 +44,11 @@ public class InvestmentConverter {
                 model.getCurrentPrice(),
                 model.getDesempenho(),
                 model.getIndice(),
+                model.getMarketValue(),
+                model.getProfit(),
+                model.getProfitPercent(),
+                model.getRelativePerformance(),
+                model.getInvestedAmount(),
                 model.getPurchaseDate()
         );
     }
@@ -48,7 +58,6 @@ public class InvestmentConverter {
                 .symbol(dto.getSymbol())
                 .purchasePrice(dto.getPurchasePrice())
                 .currentPrice(dto.getCurrentPrice())
-                .desempenho(dto.getDesempenho())
                 .indice(dto.getIndice())
                 .quantity(dto.getQuantity())
                 .type(dto.getType())
@@ -68,6 +77,11 @@ public class InvestmentConverter {
                 .desempenho(domain.getDesempenho())
                 .indice(domain.getIndice())
                 .quantity(domain.getQuantity())
+                .investedAmount(domain.getInvestedAmount())
+                .relativePerformance(domain.getRelativePerformance())
+                .marketValue(domain.getMarketValue())
+                .profit(domain.getProfit())
+                .profitPercent(domain.getProfitPercent())
                 .purchaseDate(domain.getPurchaseDate())
                 .build();
     }

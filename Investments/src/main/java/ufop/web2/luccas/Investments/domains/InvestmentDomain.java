@@ -32,6 +32,12 @@ public class InvestmentDomain {
 
     private float indice;
 
+    private float investedAmount;   // quantity * purchasePrice
+    private float marketValue;      // quantity * currentPrice
+    private float profit;           // marketValue - investedAmount
+    private float profitPercent;    // (profit / investedAmount) * 100
+    private float relativePerformance; // desempenho - indice
+
     private LocalDateTime purchaseDate;
 
     private LocalDateTime createdAt;

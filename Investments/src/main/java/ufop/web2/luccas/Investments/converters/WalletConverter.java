@@ -24,16 +24,29 @@ public class WalletConverter {
         return WalletRecordDTO.builder()
                 .id(model.getId())
                 .user(UserConverter.toSimpleUserRecordDTO(model.getUser()))
-                .investments(model.getInvestments().stream()
+                .desempenho(model.getDesempenho())
+                .amount(model.getAmount())
+                .balance(model.getBalance())
+                .investments(model.getInvestments() != null
+                        ? model.getInvestments().stream()
                         .map(InvestmentConverter::toWalletInvestmentRecordDTO)
-                        .toList())
+                        .toList()
+                        : new ArrayList<>())
                 .build();
     }
 
     public static WalletIDRecordDTO toWalletIDRecordDTO(WalletModel model)
     {
         return new WalletIDRecordDTO(
-                model.getId()
+                model.getId(),
+                model.getAmount(),
+                model.getBalance(),
+                model.getDesempenho(),
+                model.getTotalQuantity(),
+                model.getTotalInvested(),
+                model.getTotalMarketValue(),
+                model.getTotalProfit(),
+                model.getTotalProfitPercent()
         );
     }
 
@@ -41,9 +54,14 @@ public class WalletConverter {
     {
         return UserWalletRecordDTO.builder()
                 .id(model.getId())
-                .investments(model.getInvestments().stream()
+                .desempenho(model.getDesempenho())
+                .amount(model.getAmount())
+                .balance(model.getBalance())
+                .investments(model.getInvestments() != null
+                        ? model.getInvestments().stream()
                         .map(InvestmentConverter::toWalletInvestmentRecordDTO)
-                        .toList())
+                        .toList()
+                        : new ArrayList<>())
                 .build();
 
     }
@@ -51,6 +69,9 @@ public class WalletConverter {
     public static WalletModel toWalletModel(WalletDomain domain) {
         return WalletModel.builder()
                 .user(UserConverter.toUserModel(domain.getUser()))
+                .desempenho(domain.getDesempenho())
+                .amount(domain.getAmount())
+                .balance(domain.getBalance())
                 .investments(domain.getInvestments() != null
                         ? domain.getInvestments().stream()
                         .map(InvestmentConverter::toInvestmentModel)
