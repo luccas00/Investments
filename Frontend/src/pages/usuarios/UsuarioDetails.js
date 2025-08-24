@@ -61,6 +61,23 @@ export default function UsuarioDetails() {
         ))}
       </ul>
 
+      <h3>Carteiras</h3>
+      {usuario.wallets && usuario.wallets.map((wallet) => (
+        <div key={wallet.id} className="mb-3">
+          <p>
+            <strong>Saldo:</strong> {wallet.balance} | <strong>Desempenho:</strong> {wallet.desempenho}
+          </p>
+          <h4>Investimentos</h4>
+          <ul>
+            {wallet.investments && wallet.investments.map((inv) => (
+              <li key={inv.id}>
+                {inv.symbol} - {inv.quantity} @ {inv.purchasePrice}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+
       <Link to="/usuarios" className="btn btn-secondary mt-3">Voltar</Link>
     </div>
   );
