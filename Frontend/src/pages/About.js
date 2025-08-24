@@ -5,6 +5,7 @@ export default function About() {
     <div className="container my-4">
       <header className="text-center mb-4">
         <h1>CSI607 – 25.1 – Sistemas Web II</h1>
+        <h4>Atividade Prática 03 - Desafio Técnico: API de Gerenciamento de Carteira de Investimentos</h4>
         <p className="mt-2"><strong>👤 Discente</strong><br/>Luccas Vinicius P. A. Santos Carneiro</p>
 
         {/* Botões de Contato */}
@@ -33,9 +34,8 @@ export default function About() {
       <section className="mb-4">
         <h2>📄 Descrição Geral</h2>
         <p>
-          Este repositório contém o Microsserviço de Vendas (Sales), o Microsserviço de Usuários (Users) e o Microsserviço de Notificações (Notifications),
-          parte integrante da aplicação de Gerenciamento de Tickets. O objetivo é gerenciar o registro de
-          eventos, o controle de disponibilidade de ingressos e a execução de vendas para os usuários finais.
+          Este repositório contém o Microsserviço de Investimentos (Investments), integrante de uma solução de Gestão de Carteiras e Ativos. A topologia inclui API de Investimentos, Gateway de Roteamento (edge) e Service Discovery (Eureka).
+          Objetivo: orquestrar operações de carteira e gerenciar ativos para usuários finais com contratos RESTful, persistência relacional e observabilidade básica.
         </p>
         <p>
           O projeto foi desenvolvido em Java 17 com Spring Boot, seguindo boas práticas de arquitetura de
@@ -57,16 +57,15 @@ export default function About() {
           <li>Maven</li>
           <li>Spring Data JPA (Hibernate)</li>
           <li>API REST</li>
-          <li>Banco De Dados Relacional (Ex: PostgreSQL, MySQL)</li>
+          <li>Banco De Dados Relacional - PostgreSQL</li>
         </ul>
       </section>
 
       <section className="mb-4">
         <h2>✅ Funcionalidades Implementadas</h2>
         <ul>
-          <li>Cadastro E Gestão De Eventos</li>
-          <li>Disponibilização De Ingressos Para Venda</li>
-          <li>Fluxo De Venda De Tickets Para Usuários Autenticados</li>
+          <li>Gestão De Carteiras e Ativos</li>
+          <li>Cadastro de Usuarios</li>
           <li>API RESTful Com Endpoints Claros E Versionados</li>
         </ul>
       </section>
@@ -74,9 +73,7 @@ export default function About() {
       <section className="mb-4">
         <h2>🧩 Serviços</h2>
         <ul>
-          <li>Users Application</li>
-          <li>Sales Application</li>
-          <li>Notification Application</li>
+          <li>Investments Application</li>
           <li>React Frontend</li>
         </ul>
       </section>
@@ -93,20 +90,20 @@ export default function About() {
             </thead>
             <tbody>
               <tr>
-                <td>User Application</td>
-                <td>3000</td>
-              </tr>
-              <tr>
-                <td>Sales Application</td>
-                <td>4000</td>
-              </tr>
-              <tr>
-                <td>Notification Application</td>
-                <td>5000</td>
+                <td>Investment Application</td>
+                <td>3939</td>
               </tr>
               <tr>
                 <td>React Frontend</td>
-                <td>1234</td>
+                <td>9012</td>
+              </tr>
+              <tr>
+                <td>Gateway Application</td>
+                <td>9999</td>
+              </tr>
+              <tr>
+                <td>Nameserver</td>
+                <td>9761</td>
               </tr>
             </tbody>
           </table>
