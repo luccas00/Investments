@@ -22,6 +22,4 @@ Microsserviço para gerenciamento de carteiras e ativos de investimento. A solu�
 | Gateway Application   | 9999  |
 | Nameserver (Eureka)   | 9761  |
 
-### 🚧 Status
-Em desenvolvimento
 
