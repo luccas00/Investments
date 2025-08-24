@@ -1,0 +1,29 @@
+services:
+  investmentServer:
+    image: postgres:16-alpine
+    ports:
+      # HOST: CONTAINER
+      - "9191:5432"
+    environment:
+      - POSTGRES_USER=luccas
+      - POSTGRES_PASSWORD=17111998
+    volumes:
+      - "./create-database.sql:/docker-entrypoint-initdb.d/create-database.sql"
+    networks:
+      - backend
+
+  pgadmin:
+    image: dpage/pgadmin4:9.3.0
+    ports:
+      - "9123:80"
+      - "9494:443"
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=luccas.web2@ufop.edu.br
+      - PGADMIN_DEFAULT_PASSWORD=17111998
+    networks:
+      - backend
+
+networks:
+  frontend:
+  backend:
+  global:

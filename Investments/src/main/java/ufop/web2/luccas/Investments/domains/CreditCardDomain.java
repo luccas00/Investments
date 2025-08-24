@@ -1,0 +1,28 @@
+package ufop.web2.luccas.Investments.domains;
+
+import lombok.*;
+
+import java.time.LocalDateTime;
+import java.util.Date;
+import java.util.UUID;
+
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class CreditCardDomain {
+
+    private UUID id;
+    private UserDomain user;
+    private CreditCardNetworkDomain creditCardNetworkDomain;
+    private String creditCardNumber;
+    private int cvc;
+    private String owner;
+    private Date expiryDate;
+
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+
+
+}

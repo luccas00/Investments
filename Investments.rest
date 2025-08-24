@@ -1,0 +1,188 @@
+### USERS – Get All
+GET http://localhost:3000/users
+
+### USERS – Get All Full Model
+GET http://localhost:3000/users/super
+
+### USERS – Get By Id (Path Param)
+GET http://localhost:3000/users/{id}
+
+### USERS – Contains Name
+GET http://localhost:3000/users/containsName/{name}
+
+### USERS – Get By Name
+GET http://localhost:3000/users/getByName/{name}
+
+### USERS – Remove
+DELETE http://localhost:3000/users/remove
+Content-Type: application/json
+
+{
+  "id": "2a63281b-42fd-4aa1-bb64-7d17886c50d0"
+}
+
+### USERS – Update Name
+PUT http://localhost:3000/users/update/name
+Content-Type: application/json
+
+{
+  "id": "b012e95c-7081-4dfc-ad85-8b3b101e8e69",
+  "name": "Luccas V P A S Carneiro"
+}
+
+### USERS – Update Phone
+PUT http://localhost:3000/users/update/phone
+Content-Type: application/json
+
+{
+  "id": "b012e95c-7081-4dfc-ad85-8b3b101e8e69",
+  "phone": "(11) 9 1111-2222"
+}
+
+### USERS – Update Password
+PUT http://localhost:3000/users/update/password
+Content-Type: application/json
+
+{
+  "id": "588ed3bb-9a32-45ba-bdf0-2c6ccc70509b",
+  "email": "luccas@example.com",
+  "oldPassword": "senhaSegura123",
+  "newPassword": "1"
+}
+
+### USERS – Create
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "Luccas Carneiro",
+  "userType": "ADMINISTRATOR",
+  "status": "ACTIVE",
+  "email": "luccas@example.com",
+  "password": "senha",
+  "cpf": "111.111.111-00",
+  "cep": "35931008",
+  "phone": "(31) 99988-9988",
+  "dateOfBirth": "1998-01-01T12:00:00"
+}
+
+### USERS – Get By Id (Body)
+POST http://localhost:3000/users/getById
+Content-Type: application/json
+
+{
+  "id": "7e1a0e6d-3c4e-4c77-9c4d-3b4f5e9e7a1b"
+}
+
+### CREDIT CARD – Create
+POST http://localhost:3000/cc
+Content-Type: application/json
+
+{
+  "userId": "b012e95c-7081-4dfc-ad85-8b3b101e8e69",
+  "creditCardNetworkId": "5b246656-271f-4851-97f2-215c2685281c",
+  "creditCardNumber": "1",
+  "owner": "Luccas Carneiro",
+  "cvc": 0,
+  "expiryDate": "2030-11-20"
+}
+
+### CREDIT CARD – Remove
+DELETE http://localhost:3000/cc/remove
+Content-Type: application/json
+
+{
+  "id": "058e58ed-2ad5-4ad7-bf47-dbacfeee5d90"
+}
+
+### CREDIT CARD NETWORK – Get All
+GET http://localhost:3000/ccn
+
+### CREDIT CARD NETWORK – Create
+POST http://localhost:3000/ccn
+Content-Type: application/json
+
+{
+  "name": "Visa"
+}
+
+### CREDIT CARD NETWORK – Remove
+DELETE http://localhost:3000/ccn/remove
+Content-Type: application/json
+
+{
+  "id": "5b246656-271f-4851-97f2-215c2685281c"
+}
+
+### UTIL – Encrypt Password
+POST http://localhost:3000/encrypt
+Content-Type: application/json
+
+{
+  "senha": "senhaSegura123",
+  "key": "21ab0c46-4385-47f0-b588-50e7d15e4cb6"
+}
+
+### UTIL – Decrypt Password
+POST http://localhost:3000/decript
+Content-Type: application/json
+
+{
+  "senha": "F5ap6eYCBA1gLP6D/GpDOA==",
+  "key": "21ab0c46-4385-47f0-b588-50e7d15e4cb6"
+}
+
+### UTIL – ViaCEP
+GET https://viacep.com.br/ws/35931008/json/
+
+### ADDRESS – Get All
+GET http://localhost:3000/address
+
+### ADDRESS – Create
+POST http://localhost:3000/address
+Content-Type: application/json
+
+{
+  "user": "0b1fd55c-0a9d-4d05-b294-a0f12c0f1bbd",
+  "zipCode": "35931008",
+  "street": "Rua Trinta e Seis",
+  "complement": "",
+  "neighborhood": "Loanda",
+  "city": "João Monlevade",
+  "state": "Minas Gerais",
+  "region": "Sudeste",
+  "uf": "MG",
+  "ddd": "31"
+}
+
+### ADDRESS – Remove
+DELETE http://localhost:3000/address/remove
+Content-Type: application/json
+
+{
+  "id": "19db67e4-6f24-4511-8c54-9f7d6e34a71a"
+}
+
+### INVESTMENTS – Get All
+GET http://localhost:9999/investments
+
+### INVESTMENTS – Create
+POST http://localhost:9999/investments
+Content-Type: application/json
+
+{
+  "user": "2e1bba38-10f1-4e86-94fe-4cd05a9c1566",
+  "type": "ACAO",
+  "status": "PAGO",
+  "symbol": "BERK34",
+  "quantity": 10.0,
+  "purchasePrice": 126.50
+}
+
+### INVESTMENTS – Remove
+DELETE http://localhost:3939/investments/remove
+Content-Type: application/json
+
+{
+  "id": "0c24f260-5e2e-4d55-91ed-7252e77d0910"
+}
