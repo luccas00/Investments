@@ -12,9 +12,7 @@ export default function UsuarioCreate() {
     status: 'PENDING',
     email: '',
     password: '',
-    city: '',
     cpf: '',
-    cep: '',
     phone: '',
     dateOfBirth: ''
   });
@@ -83,17 +81,6 @@ export default function UsuarioCreate() {
             value={form.password}
             onChange={handleChange}
             required
-          />
-        </div>
-
-        <div className="mb-3">
-          <label>CEP</label>
-          <input
-            type="text"
-            name="cep"
-            className="form-control"
-            value={form.cep}
-            onChange={handleChange}
           />
         </div>
 
