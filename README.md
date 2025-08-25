@@ -1,5 +1,9 @@
-## 📈 Investments
+# CSI607 – 25.1 – Sistemas Web II
 
+## 👤 Discente
+**Luccas Vinicius P. A. Santos Carneiro**
+
+## 📈 Investments
 Microsserviço para gerenciamento de carteiras e ativos de investimento. A solução é composta por uma API de investimentos em Spring Boot, um gateway de roteamento, um service discovery e um frontend em React.
 
 ### ⚙️ Tecnologias
