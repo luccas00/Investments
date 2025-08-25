@@ -20,6 +20,6 @@ Microsservi√ßo para gerenciamento de carteiras e ativos de investimento. A solu√
 | Investments API       | 3939  |
 | React Frontend        | 9012  |
 | Gateway Application   | 9999  |
-| Nameserver (Eureka)   | 9761  |
+| Nameserver (Eureka)   | 1234  |
 
 
