@@ -15,12 +15,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/users",
+							"raw": "http://localhost:9999/users",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "9999",
 							"path": [
 								"users"
 							]
@@ -141,7 +141,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": \"2a63281b-42fd-4aa1-bb64-7d17886c50d0\"\r\n}",
+							"raw": "{\r\n    \"id\": \"ab3235c9-cf05-43f7-b38f-99ac17be203b\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -149,12 +149,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/users/remove",
+							"raw": "http://localhost:3939/users/remove",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "3939",
 							"path": [
 								"users",
 								"remove"
@@ -260,7 +260,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"Luccas Carneiro\",\r\n  \"userType\": \"ADMINISTRATOR\",\r\n  \"status\": \"ACTIVE\",\r\n  \"email\": \"luccas@example.com\",\r\n  \"password\": \"senha\",\r\n  \"cpf\": \"111.111.111-00\",\r\n  \"cep\": \"35931008\",\r\n  \"phone\": \"(31) 99988-9988\",\r\n  \"dateOfBirth\": \"1998-01-01T12:00:00\"\r\n}\r\n",
+							"raw": "{\r\n  \"name\": \"Luccas Carneiro\",\r\n  \"userType\": \"ADMINISTRATOR\",\r\n  \"status\": \"ACTIVE\",\r\n  \"email\": \"luccas@example.com\",\r\n  \"password\": \"senha\",\r\n  \"cpf\": \"111.333.111-00\",\r\n  \"cep\": \"35931008\",\r\n  \"phone\": \"(31) 99988-9988\",\r\n  \"dateOfBirth\": \"1998-01-01T12:00:00\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -268,12 +268,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/users",
+							"raw": "http://localhost:{{porta}}/users",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "{{porta}}",
 							"path": [
 								"users"
 							]
@@ -322,7 +322,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"userId\": \"b012e95c-7081-4dfc-ad85-8b3b101e8e69\",\r\n    \"creditCardNetworkId\": \"5b246656-271f-4851-97f2-215c2685281c\",\r\n    \"creditCardNumber\": \"1\",\r\n    \"owner\": \"Luccas Carneiro\",\r\n    \"cvc\": 0,\r\n    \"expiryDate\": \"2030-11-20\"\r\n}",
+							"raw": "{\r\n    \"userId\": \"2e1bba38-10f1-4e86-94fe-4cd05a9c1566\",\r\n    \"creditCardNetworkId\": \"38fc32a6-fdc4-448f-82a5-7af7208c7e70\",\r\n    \"creditCardNumber\": \"1\",\r\n    \"owner\": \"Luccas Carneiro\",\r\n    \"cvc\": 0,\r\n    \"expiryDate\": \"2030-11-20\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -330,12 +330,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/cc",
+							"raw": "http://localhost:9999/cc",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "9999",
 							"path": [
 								"cc"
 							]
@@ -411,12 +411,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/ccn",
+							"raw": "http://localhost:{{porta}}/ccn",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "{{porta}}",
 							"path": [
 								"ccn"
 							]
@@ -656,7 +656,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"user\": \"2e1bba38-10f1-4e86-94fe-4cd05a9c1566\",\r\n  \"type\": \"ACAO\",\r\n  \"status\": \"PAGO\",\r\n  \"symbol\": \"BERK34\",\r\n  \"quantity\": 10.0,\r\n  \"purchasePrice\": 126.50\r\n}\r\n",
+							"raw": "{\r\n  \"wallet\": \"2489f3d8-a244-4930-81d3-e44237450c07\",\r\n  \"type\": \"ACAO\",\r\n  \"status\": \"PAGO\",\r\n  \"symbol\": \"AAAAAAMT\",\r\n  \"quantity\": 10.0,\r\n  \"purchasePrice\": 1026.50,\r\n  \"currentPrice\": 2147.75,\r\n  \"indice\": 1,\r\n  \"desempenho\": 10\r\n\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -664,12 +664,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9999/investments",
+							"raw": "http://localhost:3939/investments",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "9999",
+							"port": "3939",
 							"path": [
 								"investments"
 							]
@@ -701,6 +701,39 @@
 							"path": [
 								"investments",
 								"remove"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "WalletsCRUD",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": \"995cc866-f2b5-4f93-a7a6-e960b6d41374\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3939/wallets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3939",
+							"path": [
+								"wallets"
 							]
 						}
 					},
