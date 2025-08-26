@@ -2,6 +2,7 @@
 
 ## 👤 Discente
 **Luccas Vinicius P. A. Santos Carneiro**
+[Apresentação](https://youtu.be/UZ_OxDD_lvw/)
 
 ## 📈 Investments
 Microsserviço para gerenciamento de carteiras e ativos de investimento. A solução é composta por uma API de investimentos em Spring Boot, um gateway de roteamento, um service discovery e um frontend em React.
